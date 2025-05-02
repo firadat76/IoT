@@ -64,3 +64,18 @@ Memory Usage	      Higher	      Minimal	      Moderate
 Complexity	        High	        Low	          Medium
 Development         Speed	Slower	Fastest	      Fast
 Scalability	        Excellent	    Poor	        Good
+
+Mongoose OS vs. Traditional RTOS
+    - Mongoose OS is not a full RTOS but an IoT framework built on FreeRTOS.
+    - It simplifies development with JavaScript and built-in cloud/networking stacks.
+    - Best for connected devices, while traditional RTOS (FreeRTOS, Zephyr) offer hard real-time guarantees.
+When to Use Mongoose OS?
+  - Fast IoT prototyping (WiFi/BLE + Cloud)
+  - JavaScript-friendly embedded programming
+  - OTA updates & device management built-in
+  - Not for hard real-time (e.g., motor control)
+Alternatives
+  - FreeRTOS → Best for basic RTOS needs.
+  - Zephyr → Best for future-proof, complex devices.
+  - ThreadX → Best for mission-critical systems.
+  - Bare Metal → Best for ultra-low-cost devices.
