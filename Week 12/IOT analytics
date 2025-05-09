@@ -1,0 +1,8 @@
+IoT Data Analytics Using ThingSpeak and MATLAB
+  In this activity, you will explore how to analyze real-time IoT sensor data in the cloud using ThingSpeak and MATLAB. Each one of you will work with a simulated or physical IoT device that sends environmental data—such as temperature
+  and humidity—to a personal ThingSpeak channel.
+  Once data is flowing to their channel, use ThingSpeak’s built-in MATLAB Analytics feature to conduct meaningful analysis. Apply simple techniques such as smoothing noisy data, detecting anomalies, computing averages over time, 
+  or exploring relationships between multiple sensor variables. The goal is to uncover patterns, gain insights, and practice making sense of raw sensor readings using cloud-based analytical tools.
+  Present their findings in a concise format: a graph produced by the analytics script and a short interpretation of what the data reveals. This exercise encourages thinking critically about data quality, environmental behavior, 
+  and the real-world usefulness of IoT analytics.
+  This activity strengthens your understanding of the full IoT pipeline—from data generation and transmission to analysis and decision-making—without the need for any local installations or complex software environments.
