@@ -1,0 +1,29 @@
+% Configuration
+readChannelID = YOUR_CHANNEL_ID;
+fieldID = 1; % Temperature
+readAPIKey = 'YOUR_READ_API_KEY';
+
+% Read Data
+[data, time] = thingSpeakRead(readChannelID, ...
+    'Fields', fieldID, ...
+    'NumPoints', 200, ...
+    'ReadKey', readAPIKey);
+
+% Calculate Mean and Standard Deviation
+meanVal = mean(data, 'omitnan');
+stdVal = std(data, 'omitnan');
+
+% Identify Outliers
+upperLimit = meanVal + 2*stdVal;
+lowerLimit = meanVal - 2*stdVal;
+outliers = (data > upperLimit | data < lowerLimit);
+
+% Plot
+plot(time, data, 'b.-');
+hold on;
+plot(time(outliers), data(outliers), 'ro', 'MarkerSize', 8, 'LineWidth', 1.5);
+xlabel('Time');
+ylabel('Temperature');
+title('Outlier Detection (2 Std Dev)');
+legend('Data', 'Outliers');
+grid on;
