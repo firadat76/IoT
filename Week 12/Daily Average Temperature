@@ -1,0 +1,24 @@
+% Configuration
+readChannelID = YOUR_CHANNEL_ID;
+fieldID = 1; % Temperature
+readAPIKey = 'YOUR_READ_API_KEY';
+
+% Read Last 7 Days of Data
+[data, time] = thingSpeakRead(readChannelID, ...
+    'Fields', fieldID, ...
+    'NumDays', 7, ...
+    'ReadKey', readAPIKey);
+
+% Convert timestamps to dates
+datesOnly = dateshift(time, 'start', 'day');
+
+% Group by date and compute daily average
+[G, dayList] = findgroups(datesOnly);
+dailyAvg = splitapply(@mean, data, G);
+
+% Plot
+bar(dayList, dailyAvg, 'FaceColor', [0.2 0.6 0.8]);
+xlabel('Date');
+ylabel('Avg Temperature');
+title('Daily Average Temperature');
+grid on;
