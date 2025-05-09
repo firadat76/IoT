@@ -1,0 +1,30 @@
+% Configuration
+readChannelID = YOUR_CHANNEL_ID;
+field1 = 1; % Temperature
+field2 = 2; % Humidity
+readAPIKey = 'YOUR_READ_API_KEY';
+
+% Read Data
+[data, ~] = thingSpeakRead(readChannelID, ...
+    'Fields', [field1, field2], ...
+    'NumPoints', 200, ...
+    'ReadKey', readAPIKey);
+
+temp = data(:,1);
+humidity = data(:,2);
+
+% Remove NaNs
+validIdx = ~isnan(temp) & ~isnan(humidity);
+temp = temp(validIdx);
+humidity = humidity(validIdx);
+
+% Compute correlation
+R = corrcoef(temp, humidity);
+corrValue = R(1,2);
+
+% Plot
+scatter(temp, humidity, 40, 'filled');
+xlabel('Temperature');
+ylabel('Humidity');
+title(sprintf('Correlation: %.2f', corrValue));
+grid on;
