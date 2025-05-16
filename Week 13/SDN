@@ -1,0 +1,80 @@
+# Software-Defined Networking (SDN)
+
+Software-Defined Networking (SDN) is a **modern approach to networking** that separates the network's **control plane** (decision-making) from the **data plane** (traffic forwarding). 
+This architectural shift allows for **centralized management**, **programmability**, and **automation** of the entire network.
+
+---
+
+## Key Concept
+
+> **SDN decouples the control logic from the physical devices, enabling centralized and programmable network control.**
+
+---
+
+## Architecture Overview
+
++---------------------+
+| Applications (North)|
++---------------------+
+↑
+| Northbound APIs
+↓
++---------------------+
+| SDN Controller |
++---------------------+
+↑
+| Southbound APIs (e.g., OpenFlow)
+↓
++---------------------+
+| Switches/Routers |
+| (Data Plane) |
++---------------------+
+
+---
+
+## Key Components
+
+- **Controller (Control Plane)**  
+  The centralized brain that makes decisions about traffic flows.  
+  _Examples: OpenDaylight, Ryu, ONOS_
+
+- **Network Devices (Data Plane)**  
+  Routers and switches that simply follow instructions from the controller.  
+  _Can be programmed via protocols like OpenFlow._
+
+- **Northbound APIs**  
+  Interfaces that allow applications and services to communicate with the controller.
+
+- **Southbound APIs**  
+  Interfaces between the controller and networking hardware.  
+  _Example: OpenFlow_
+
+---
+
+##  Benefits
+
+-  Centralized network control
+-  Faster provisioning and updates
+-  Automation and orchestration
+-  Enhanced visibility and monitoring
+-  Network programmability
+-  Reduced cost with simpler hardware
+
+---
+
+##  Use Cases
+
+-  Cloud data center networks
+-  5G and mobile core networks
+-  Security policy enforcement
+-  SD-WAN and network virtualization
+-  Traffic engineering and load balancing
+
+---
+
+## Further Reading
+
+- [Open Networking Foundation (ONF)](https://opennetworking.org/)
+- [ONOS Controller](https://onosproject.org/)
+- [OpenDaylight](https://www.opendaylight.org/)
+- [Ryu SDN Framework](https://osrg.github.io/ryu/)
