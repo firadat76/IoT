@@ -1,0 +1,69 @@
+# Ryu vs ONOS: Understanding Two Popular SDN Controllers
+
+Both **Ryu** and **ONOS** are open-source SDN controllers that help manage network devices using programmable logic. They differ in design philosophy, use cases, and technical implementation.
+
+---
+
+## What is Ryu?
+
+> **Ryu** is a component-based SDN framework written in Python, designed for developers and researchers who need quick and flexible network application development.
+
+### Key Features of Ryu
+-  **Written in Python**: Easy for prototyping and fast development.
+-  **Supports OpenFlow 1.0–1.5** and other southbound APIs.
+-  **Lightweight and modular**: Suitable for small to mid-sized networks.
+-  **Developer-Friendly**: Simple to write custom applications with an event-driven model.
+-  **Research/Testing Focused**: Widely used in academia.
+
+### Resources
+- Official: [https://osrg.github.io/ryu/](https://osrg.github.io/ryu/)
+- GitHub: [https://github.com/faucetsdn/ryu](https://github.com/faucetsdn/ryu)
+
+---
+
+##  What is ONOS?
+
+> **ONOS** (Open Network Operating System) is a distributed, high-performance SDN controller designed for **carrier-grade** and **large-scale production networks**.
+
+###  Key Features of ONOS
+-  **Written in Java**: Optimized for performance and scalability.
+-  **Distributed Architecture**: Multiple controllers can run as a cluster for high availability and fault tolerance.
+-  **Supports OpenFlow, NETCONF, gNMI**, and other protocols.
+-  **Northbound API for custom apps**: REST, CLI, and Java APIs.
+-  **Carrier/Enterprise Focus**: Ideal for telecom networks and ISPs.
+
+###  Resources
+- Official: [https://onosproject.org/](https://onosproject.org/)
+- GitHub: [https://github.com/opennetworkinglab/onos](https://github.com/opennetworkinglab/onos)
+
+---
+
+##  Quick Comparison
+
+| Feature              | Ryu                             | ONOS                             |
+|----------------------|----------------------------------|----------------------------------|
+| Language             | Python                          | Java                             |
+| Architecture         | Single-controller               | Distributed (clustered)          |
+| Target Audience      | Researchers, Developers         | Telecom operators, ISPs         |
+| Protocol Support     | OpenFlow, NETCONF (limited)     | OpenFlow, NETCONF, gNMI, P4      |
+| Use Case             | Labs, education, prototypes     | Production, carrier-grade SDN   |
+| Community Support    | Moderate                        | Strong (ONF-backed)              |
+
+---
+
+## When to Use
+
+- Use **Ryu** if you're prototyping SDN apps, learning SDN, or working on small-scale testbeds.
+- Use **ONOS** if you're building a scalable, fault-tolerant SDN platform for enterprise or telecom networks.
+
+---
+
+## Summary
+
+| Controller | Use It For                                  |
+|------------|----------------------------------------------|
+| **Ryu**    | Lightweight, educational, and flexible SDN prototyping |
+| **ONOS**   | Large-scale, fault-tolerant, and production-ready SDN solutions |
+
+Together, they reflect the diversity of needs within the SDN ecosystem.
+
